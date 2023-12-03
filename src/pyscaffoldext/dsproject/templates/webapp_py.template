@@ -1,0 +1,13 @@
+import gradio as gr
+from ${qual_pkg} import pipeline
+
+predict = pipeline()
+
+with gr.Blocks(title="${qual_pkg}") as webapp:
+    gr.Markdown("# Greetings from ${qual_pkg}!")
+    inp = gr.Textbox(placeholder="What is your name?")
+    out = gr.Textbox()
+
+    inp.change(fn=predict,
+               inputs=inp,
+               outputs=out)
