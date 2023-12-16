@@ -41,10 +41,15 @@ def run_webservice():
     ray.init()
     serve.run(WebService.bind(), route_prefix="/hello")
 
-def main(verbose: Optional[int] = typer.Option(None, '--verbose', '-v', count=True,
-                                               help="Increase verbosity by augmenting the count of 'v's, and enhance the total number of messages.")):
+def main(verbose: Optional[int] = typer.Option(0, '--verbose', '-v', count=True,
+                                               help="Increase verbosity by augmenting the count of 'v's, and enhance "
+                                                    "the total number of messages.")):
     setup_logging(verbose*10)
     app()
 
+def run():
+    app()
+
+
 if __name__ == "__main__":
-    typer.run(main)
+    typer.run(app)

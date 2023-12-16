@@ -72,7 +72,10 @@ def add_dsproject(struct: Structure, opts: ScaffoldOpts) -> ActionParams:
         "environment.yml": (template("environment_yml"), NO_OVERWRITE),
         "setup.cfg": (template("setup_cfg"), NO_OVERWRITE),
         "models": {".gitignore": gitignore_all},
-        "notebooks": {"template.ipynb": (template("template_ipynb"), NO_OVERWRITE)},
+        "notebooks": {
+            "template.ipynb": (template("template_ipynb"), NO_OVERWRITE),
+            "helpers.py": (template("helpers.py"), NO_OVERWRITE),
+        },
         "references": {".gitignore": ("", NO_OVERWRITE)},
         "docker-compose.yml": (template("docker-compose_yml"), NO_OVERWRITE),
         "reports": {"figures": {".gitignore": ("", NO_OVERWRITE)}},
@@ -80,7 +83,7 @@ def add_dsproject(struct: Structure, opts: ScaffoldOpts) -> ActionParams:
             opts["qual_pkg"]: {
                 "__init__.py": (
                     template("__init__"),
-                    add_permissions(stat.S_IXUSR, NO_OVERWRITE),
+                    NO_OVERWRITE,
                 ),
                 "cli.py": (
                     template("cli_py"),
