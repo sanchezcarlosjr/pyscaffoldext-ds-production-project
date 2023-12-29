@@ -57,8 +57,8 @@ SHELL ["conda", "run", "-n", "${name}", "/bin/bash", "-c"]
 RUN pip install ./*.whl
 
 # Expose a port for a web-service for instance.
-# EXPOSE 80/tcp
+EXPOSE 80/tcp
 
 # Code to run when container is started. Replace `YOUR_CONSOLE_SCRIPT` with the
 # value of `console_scripts` in section `[options.entry_points]` of `setup.cfg`.
-# ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "${name}", "YOUR_CONSOLE_SCRIPT"]
+ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "${name}", "${name} web"]

@@ -7,16 +7,12 @@ from pathlib import Path
 import numpy as np
 import scipy as sp
 import sklearn
-import statsmodels.api as sm
-from statsmodels.formula.api import ols
-
-%load_ext autoreload
-%autoreload 2
+#import statsmodels.api as sm
+#from statsmodels.formula.api import ols
+import pystow
 
 import matplotlib as mpl
 import matplotlib.pyplot as plt
-%matplotlib inline
-%config InlineBackend.figure_format = 'retina'
 
 import seaborn as sns
 sns.set_context("poster")

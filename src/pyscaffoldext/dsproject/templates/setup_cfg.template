@@ -48,10 +48,14 @@ package_dir =
 # new major versions. This works if the required packages follow Semantic Versioning.
 # For more information, check out https://semver.org/.
 install_requires =
-    fastapi
+    importlib-metadata; python_version<"3.10"
     typer[all]
-    ray[serve]
+    gradio
     pydantic
+    dagster
+    ray[serve]
+    fastapi
+
 
 [options.packages.find]
 where = src
