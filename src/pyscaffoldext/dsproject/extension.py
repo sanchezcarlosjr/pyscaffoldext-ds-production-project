@@ -74,13 +74,13 @@ def add_dsproject(struct: Structure, opts: ScaffoldOpts) -> ActionParams:
         "models": {".gitignore": gitignore_all},
         "notebooks": {
             "template.ipynb": (template("template_ipynb"), NO_OVERWRITE),
-            "helpers.py": (template("helpers.py"), NO_OVERWRITE),
+            "helpers.py": (template("helpers_py"), NO_OVERWRITE),
         },
         "references": {".gitignore": ("", NO_OVERWRITE)},
         "docker-compose.yml": (template("docker-compose_yml"), NO_OVERWRITE),
         "reports": {"figures": {".gitignore": ("", NO_OVERWRITE)}},
         "src": {
-            opts["qual_pkg"]: {
+            opts["package"]: {
                 "__init__.py": (
                     template("__init__"),
                     NO_OVERWRITE,
