@@ -65,7 +65,7 @@ the documentation of [PyScaffold] for more information.
 
 ## Usage
 
-Just install this package with `pipx inject pyscaffold +https://github.com/sanchezcarlosjr/pyscaffoldext-ds-production-project.git`
+Just install this package with `pipx inject pyscaffold git+https://github.com/sanchezcarlosjr/pyscaffoldext-ds-production-project.git`
 and note that `putup -h` shows a new option `--dsproject`.
 Creating a data science project is then as easy as:
 ```bash
