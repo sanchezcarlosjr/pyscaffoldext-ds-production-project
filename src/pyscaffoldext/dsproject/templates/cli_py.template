@@ -16,6 +16,7 @@ import ray
 
 import typer
 from typing import Optional
+from typing_extensions import Annotated
 
 app = typer.Typer()
 
@@ -25,10 +26,10 @@ def version():
 
 
 @app.command()
-def run_webapp(share=False):
+def run_webapp(share: Annotated[bool, typer.Option(help="Share with Gradio servers.")]=False):
     _logger.info("Starting webapp..")
-    from ${qual_pkg}.webapp import webapp
-    webapp.launch(share)
+    from evafs.webapp import webapp
+    webapp.launch(share=share)
 
 
 @app.command()
