@@ -15,7 +15,17 @@
 
 A longer description of your project goes here...
 
-## Installation
+## Installation from pip
+Install the package with:
+```bash
+pip install ${name}
+```
+
+## Installation from Git
+Clone the repository with:
+```bash
+git clone https://github.com/<USER>/${name}.git
+```
 
 In order to set up the necessary environment:
 

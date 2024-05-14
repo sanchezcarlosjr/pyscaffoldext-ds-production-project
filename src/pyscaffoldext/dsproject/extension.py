@@ -69,6 +69,8 @@ def add_dsproject(struct: Structure, opts: ScaffoldOpts) -> ActionParams:
             },
         },
         "Dockerfile": (template("Dockerfile"), NO_OVERWRITE),
+        ".env": (template("env"), NO_OVERWRITE),
+        ".env.example": (template("env.example"), NO_OVERWRITE),
         "environment.yml": (template("environment_yml"), NO_OVERWRITE),
         "setup.cfg": (template("setup_cfg"), NO_OVERWRITE),
         "models": {".gitignore": gitignore_all},
@@ -85,12 +87,18 @@ def add_dsproject(struct: Structure, opts: ScaffoldOpts) -> ActionParams:
                     template("__init__"),
                     NO_OVERWRITE,
                 ),
+                "io": {
+                    "__init__.py": (
+                        template("io_init__py"),
+                        NO_OVERWRITE,
+                    ),
+                    "assets.py": (
+                        template("assets_py"),
+                        NO_OVERWRITE,
+                    )
+                },
                 "cli.py": (
                     template("cli_py"),
-                    add_permissions(stat.S_IXUSR, NO_OVERWRITE),
-                ),
-                "webservice.py": (
-                    template("webservice_py"),
                     add_permissions(stat.S_IXUSR, NO_OVERWRITE),
                 ),
                 "webapp.py": (
